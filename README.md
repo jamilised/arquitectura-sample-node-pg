@@ -138,12 +138,6 @@ El proyecto tiene **4 documentos de explicación** que hay que leer **en orden**
 
 > 💡 Cada documento asume que ya leíste el anterior. Si salteás alguno, no vas a entender *por qué* se hace el cambio.
 
-### Documento extra
-
-| Documento | Qué contiene |
-|-----------|-------------|
-| [Análisis de errores y mejoras](documents/analisis-mejoras.md) | Lista detallada de bugs encontrados y mejoras didácticas aplicadas al proyecto. |
-
 ---
 
 ## 🏗️ Arquitectura en capas (V3)

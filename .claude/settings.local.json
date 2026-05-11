@@ -3,7 +3,8 @@
     "allow": [
       "Bash(dir /b)",
       "Bash(move *)",
-      "PowerShell(Move-Item *)"
+      "PowerShell(Move-Item *)",
+      "PowerShell(Remove-Item *)"
     ]
   }
 }
