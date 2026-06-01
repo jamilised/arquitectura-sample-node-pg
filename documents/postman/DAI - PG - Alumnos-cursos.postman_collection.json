@@ -5,6 +5,13 @@
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
     "_exporter_id": "5470850"
   },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:3000",
+      "type": "string"
+    }
+  ],
   "item": [
     {
       "name": "/api/alumnos",
@@ -15,7 +22,7 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "http://localhost:3000/api/alumnos",
+              "raw": "{{baseUrl}}/api/alumnos",
               "protocol": "http",
               "host": [
                 "localhost"
@@ -47,7 +54,7 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "http://localhost:3000/api/alumnos/test-insert",
+              "raw": "{{baseUrl}}/api/alumnos/test-insert",
               "protocol": "http",
               "host": [
                 "localhost"
@@ -80,7 +87,7 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "http://localhost:3000/api/alumnos/130",
+              "raw": "{{baseUrl}}/api/alumnos/130",
               "protocol": "http",
               "host": [
                 "localhost"
@@ -110,7 +117,7 @@
               }
             },
             "url": {
-              "raw": "http://localhost:3000/api/alumnos",
+              "raw": "{{baseUrl}}/api/alumnos",
               "protocol": "http",
               "host": [
                 "localhost"
@@ -139,7 +146,7 @@
               }
             },
             "url": {
-              "raw": "http://localhost:3000/api/alumnos/138",
+              "raw": "{{baseUrl}}/api/alumnos/138",
               "protocol": "http",
               "host": [
                 "localhost"
@@ -160,7 +167,7 @@
             "method": "DELETE",
             "header": [],
             "url": {
-              "raw": "http://localhost:3000/api/alumnos/135",
+              "raw": "{{baseUrl}}/api/alumnos/135",
               "protocol": "http",
               "host": [
                 "localhost"
@@ -186,16 +193,7 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "http://localhost:3000/api/cursos",
-              "protocol": "http",
-              "host": [
-                "localhost"
-              ],
-              "port": "3000",
-              "path": [
-                "api",
-                "cursos"
-              ],
+              "raw": "{{baseUrl}}/api/cursos",
               "query": [
                 {
                   "key": "limit",
@@ -218,19 +216,106 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "http://localhost:3000/api/cursos/5",
-              "protocol": "http",
-              "host": [
-                "localhost"
-              ],
-              "port": "3000",
-              "path": [
-                "api",
-                "cursos",
-                "5"
-              ]
+              "raw": "{{baseUrl}}/api/cursos/5"
             }
           },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "/api/materias",
+      "item": [
+        {
+          "name": "GetAll",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": { "raw": "{{baseUrl}}/api/materias" }
+          },
+          "response": []
+        },
+        {
+          "name": "GetById",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": { "raw": "{{baseUrl}}/api/materias/1" }
+          },
+          "response": []
+        },
+        {
+          "name": "Create",
+          "request": {
+            "method": "POST",
+            "header": [ { "key": "Content-Type", "value": "application/json" } ],
+            "body": { "mode": "raw", "raw": "{ \"nombre\": \"Matemática\" }" },
+            "url": { "raw": "{{baseUrl}}/api/materias" }
+          },
+          "response": []
+        },
+        {
+          "name": "Update",
+          "request": {
+            "method": "PUT",
+            "header": [ { "key": "Content-Type", "value": "application/json" } ],
+            "body": { "mode": "raw", "raw": "{ \"nombre\": \"Física\" }" },
+            "url": { "raw": "{{baseUrl}}/api/materias/1" }
+          },
+          "response": []
+        },
+        {
+          "name": "DeleteById",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": { "raw": "{{baseUrl}}/api/materias/1" }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "/api/calificaciones",
+      "item": [
+        {
+          "name": "GetAll",
+          "request": { "method": "GET", "header": [], "url": { "raw": "{{baseUrl}}/api/calificaciones" } },
+          "response": []
+        },
+        {
+          "name": "GetById",
+          "request": { "method": "GET", "header": [], "url": { "raw": "{{baseUrl}}/api/calificaciones/1" } },
+          "response": []
+        },
+        {
+          "name": "GetByAlumno",
+          "request": { "method": "GET", "header": [], "url": { "raw": "{{baseUrl}}/api/calificaciones/alumno/1" } },
+          "response": []
+        },
+        {
+          "name": "Create",
+          "request": {
+            "method": "POST",
+            "header": [ { "key": "Content-Type", "value": "application/json" } ],
+            "body": { "mode": "raw", "raw": "{\n  \"id_alumno\": 1,\n  \"id_materia\": 1,\n  \"nota\": 8\n}" },
+            "url": { "raw": "{{baseUrl}}/api/calificaciones" }
+          },
+          "response": []
+        },
+        {
+          "name": "Update",
+          "request": {
+            "method": "PUT",
+            "header": [ { "key": "Content-Type", "value": "application/json" } ],
+            "body": { "mode": "raw", "raw": "{ \"nota\": 9 }" },
+            "url": { "raw": "{{baseUrl}}/api/calificaciones/1" }
+          },
+          "response": []
+        },
+        {
+          "name": "DeleteById",
+          "request": { "method": "DELETE", "header": [], "url": { "raw": "{{baseUrl}}/api/calificaciones/1" } },
           "response": []
         }
       ]
